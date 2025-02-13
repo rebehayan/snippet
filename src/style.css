@@ -24,4 +24,26 @@ main {
     height: 60vh;
     border: 1px solid blue;
   }
+  textarea[readonly] {
+    overflow: hidden;
+    border: none;
+    resize: none;
+    outline: none;
+  }
+}
+body {
+  padding: 2rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  img {
+    width: 30px;
+  }
 }

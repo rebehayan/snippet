@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="VSCode전용 스니펫 생성기" />
-    <title>스니펫생성기 - Rebehayan</title>
-    <meta property="og:type" content="responsvie" />
-    <meta property="og:site_name" content="Snippet for VSCode" />
-    <meta property="og:title" content="Snippet" />
-    <meta property="og:description" content="VSCode전용 스니펫 생성기" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="페이지 주소" />
-    <link rel="stylesheet" href="./index.css" />
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body>
-    <header>
-      <h1>VSCode Snippet</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VSCode전용 스니펫 생성기" />
+  <link rel="icon" href="/logo.png" type="image/x-icon">
+  <title>스니펫생성기 - Rebehayan</title>
+  <meta property="og:type" content="responsvie" />
+  <meta property="og:site_name" content="Snippet for VSCode" />
+  <meta property="og:title" content="Snippet" />
+  <meta property="og:description" content="VSCode전용 스니펫 생성기" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="페이지 주소" />
+  <link rel="stylesheet" href="./src/style.css" />
+  <script type="module" src="./src/main.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="logo"><img src="/logo.png" alt=""> VSCode Snippet Generator</h1>
+    <nav>
       <a href="">About</a>
       <a href="">Guide</a>
-    </header>
-    <main class="main">
-      <div class="before">
-        <label for="">설명</label>
-        <input type="text" name="desc" placeholder="설명" />
-        <label for="">단축키</label>
-        <input type="text" name="shortcode" placeholder="단축키" />
-        <label for="">코드입력</label>
-        <textarea contenteditable="true" name="codes" class="textarea" placeholder="자동생성하고 싶은 코드를 삽입하세요."></textarea>
-      </div>
-      <div class="after">
-        <label for="">생성코드</label>
-        <pre contenteditable="true" class="textarea" readonly placeholder="자동생성하고 싶은 코드를 삽입하세요.">
+    </nav>
+  </header>
+  <main class="main">
+    <div class="before">
+      <label for="">설명</label>
+      <input type="text" name="desc" placeholder="설명" />
+      <label for="">단축키</label>
+      <input type="text" name="shortcode" placeholder="단축키" />
+      <label for="">코드입력</label>
+      <textarea contenteditable="true" name="codes" class="textarea" placeholder="자동생성하고 싶은 코드를 삽입하세요."></textarea>
+    </div>
+    <div class="after">
+      <label for="">생성코드</label>
+      <div class="textarea">
+        <pre class="a">
 "<span class="desc"></span>": {
-    "prefix": "<span class="shortcode"></span>",
-    "body": [
-        <pre class="codes">
-
-        </pre>
-    ],
-    "description": "<span class="desc"></span>"
-}</pre>
+  "prefix": "<span class="shortcode"></span>",
+  "body": [
+</pre>
+        <textarea class="codes" readonly rows="1">
+</textarea>
+        <pre class="b">
+],
+"description": "<span class="desc"></span>"
+}
+</pre>
       </div>
-      <button>코드복사</button>
-    </main>
-    <footer></footer>
-  </body>
+    </div>
+    <button class="btn-copy">코드복사</button>
+  </main>
+  <footer>&copy; 2000 ~ 2025</footer>
+  <template class="target"></template>
+</body>
+
 </html>
