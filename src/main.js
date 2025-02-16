@@ -51,7 +51,6 @@ const copy = async (selector) => {
 };
 
 buttonCopy.addEventListener("click", () => {
-  // selectAll(copyText);
   const a = document.querySelector(".a");
   const b = document.querySelector(".b");
   const code = document.querySelector(".codes");
