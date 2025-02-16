@@ -1,59 +1,77 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="VSCode전용 스니펫 생성기입니다." />
-    <link rel="icon" href="/logo.png" type="image/x-icon" />
-    <title>스니펫생성기 - Rebehayan</title>
-    <meta property="og:type" content="responsvie" />
-    <meta property="og:site_name" content="Snippet for VSCode" />
-    <meta property="og:title" content="Snippet" />
-    <meta property="og:description" content="VSCode전용 스니펫 생성기" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="페이지 주소" />
-    <link rel="stylesheet" href="./src/style.css" />
-    <script type="module" src="./src/main.js"></script>
-  </head>
 
-  <body>
-    <header class="header">
-      <h1 class="logo"><img src="/logo.png" alt="Rebehayan" /> VSCode Snippet Generator</h1>
-      <nav class="gnb">
-        <a href="">Guide</a>
-        <a href="">About</a>
-      </nav>
-    </header>
-    <main class="main">
-      <div class="snippet-input">
-        <label for="desc">설명</label>
-        <input type="text" id="desc" name="desc" placeholder="스니펫의 목적을 작성하세요." />
-        <label for="shortcode">단축키</label>
-        <input type="text" id="shortcode" name="shortcode" placeholder="단축키를 지정하세요." />
-        <label for="codes">코드입력</label>
-        <textarea contenteditable="true" rows="10" id="codes" name="codes" class="textarea" placeholder="등록하고 싶은 코드를 삽입하세요."></textarea>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VSCode전용 스니펫 생성기입니다." />
+  <link rel="icon" href="/logo.png" type="image/x-icon" />
+  <title>스니펫생성기 - Rebehayan</title>
+  <meta property="og:type" content="responsvie" />
+  <meta property="og:site_name" content="Snippet for VSCode" />
+  <meta property="og:title" content="Snippet" />
+  <meta property="og:description" content="VSCode전용 스니펫 생성기" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="페이지 주소" />
+  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/style.css" />
+  <script type="module" src="./src/main.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="logo"><img src="/logo.png" alt="Rebehayan" /> VSCode Snippet Generator</h1>
+    <nav class="gnb">
+      <!-- <a href="">Guide</a> -->
+      <a href="">About</a>
+    </nav>
+  </header>
+  <main class="main">
+    <article class="notice-guide">
+      <h2>Guide</h2>
+      <div class="notice-guide__content">
+        <ul>
+          <li><code>$1</code>, <code>$2</code>, <code>$3</code> 등으로 탭 순서를 지정할 수 있습니다.</li>
+          <li><code>$1:설명</code> 형식으로 탭 위치에 기본 가이드를 제공할 수 있습니다.</li>
+        </ul>
+        <ul>
+          <li>VSCode에서 <kbd>F1</kbd>키를 누른 후 'snippets' 검색</li>
+          <li>원하는 언어 선택</li>
+          <li><code>JSON</code> 스니펫 생성기를 통해 복사 붙이기 하세요.</li>
+        </ul>
       </div>
-      <div class="snippet-output">
-        <h2 class="label">생성코드</h2>
+    </article>
+    <div class="snippet-input">
+      <label for="desc">제목</label>
+      <input type="text" id="desc" name="desc" placeholder="제목 또는 사용목적을 작성하세요." />
+      <label for="shortcode">단축키</label>
+      <input type="text" id="shortcode" name="shortcode" placeholder="단축키를 지정하세요." />
+      <label for="codes">코드입력</label>
+      <textarea contenteditable="true" rows="10" id="codes" name="codes" class="textarea"
+        placeholder="등록하고 싶은 코드를 삽입하세요."></textarea>
+    </div>
+    <div class="snippet-output">
+      <h2 class="label">생성코드</h2>
 
-        <div class="output">
-          <div class="textarea">
-            <pre class="a">
+      <div class="output">
+        <div class="textarea">
+          <pre id="output-code1">
 "<span class="desc"></span>": {
   "prefix": "<span class="shortcode"></span>",
   "body": [
 </pre>
-            <textarea class="codes" readonly rows="1" role="none"></textarea>
-            <pre class="b">
+          <textarea class="codes" id="output-code2" readonly rows="1" role="none"></textarea>
+          <pre id="output-code3">
 ],
 "description": "<span class="desc"></span>"
 }</pre>
-          </div>
         </div>
-        <button class="btn-copy">코드복사</button>
       </div>
-    </main>
-    <footer class="footer">&copy; 2000 ~ 2025</footer>
-    <template class="target"></template>
-  </body>
+      <button class="btn-copy">코드복사</button>
+    </div>
+  </main>
+  <footer class="footer">&copy; 2000 ~ 2025</footer>
+  <template id="template"></template>
+</body>
+
 </html>
