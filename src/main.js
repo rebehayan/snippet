@@ -1,5 +1,5 @@
-const before = document.querySelector(".before");
-const after = document.querySelector(".after");
+const before = document.querySelector(".snippet-input");
+const after = document.querySelector(".snippet-output");
 const inputs = before.querySelectorAll("input");
 inputs.forEach((input) => {
   input.addEventListener("input", (e) => {
