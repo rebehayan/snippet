@@ -8,7 +8,7 @@ export const setBaseUrl = (getURL, getPath) => {
   let baseUrl = "";
 
   if (window.location.hostname === config.isURL) {
-    baseUrl = config.getPath;
+    baseUrl = config.path;
   } else {
     baseUrl = "/";
   }
