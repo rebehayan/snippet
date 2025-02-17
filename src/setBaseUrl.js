@@ -3,7 +3,7 @@ export const setBaseUrl = (baseURL) => {
   let baseUrl = "";
 
   if (window.location.hostname === baseURL) {
-    baseUrl = "/html/";
+    baseUrl = "/snippet/";
   } else {
     baseUrl = "/";
   }
