@@ -231,6 +231,8 @@
       outline: none;
       width: 100%;
       background-color: transparent;
+      color: var(--dark);
+      cursor: text;
     }
     button {
       justify-self: end;
