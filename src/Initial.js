@@ -4,6 +4,7 @@ export const Initial = () => {
     blank();
   };
 
+  // 푸터 날짜
   const footerYear = () => {
     const footer = document.querySelector(".footer .thisyear");
     if (!footer) return;
@@ -12,6 +13,7 @@ export const Initial = () => {
     footer.append(year);
   };
 
+  // 링크 새창
   const blank = () => {
     const links = document.querySelectorAll("a");
 

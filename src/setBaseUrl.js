@@ -1,9 +1,14 @@
-export const setBaseUrl = (baseURL) => {
+export const setBaseUrl = (getURL, getPath) => {
+  const config = {
+    isURL: getURL,
+    path: getPath,
+  };
+
   const baseElement = document.querySelector("base") || document.createElement("base");
   let baseUrl = "";
 
-  if (window.location.hostname === baseURL) {
-    baseUrl = "/snippet/";
+  if (window.location.hostname === config.isURL) {
+    baseUrl = config.getPath;
   } else {
     baseUrl = "/";
   }
