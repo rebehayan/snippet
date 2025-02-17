@@ -6,4 +6,4 @@ import { setBaseUrl } from "./setBaseUrl.js";
 Initial();
 Input();
 CopyCode();
-setBaseUrl("rebehayan.github.io", "/snippet/");
+setBaseUrl("rebehayan.github.io", "/snippet/public/");
