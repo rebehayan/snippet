@@ -21,19 +21,18 @@
 <body>
   <header class="header">
     <h1 class="logo"><img src="/logo.png" alt="Rebehayan" /> VSCode Snippet Generator</h1>
-    <nav class="gnb">
-      <!-- <a href="">Guide</a> -->
-      <a href="">About</a>
-    </nav>
   </header>
   <main class="main">
     <article class="notice-guide">
-      <h2>Guide</h2>
-      <div class="notice-guide__content">
+      <div>
+        <h2 class="heading-base">Snippet Guide</h2>
         <ul>
           <li><code>$1</code>, <code>$2</code>, <code>$3</code> 등으로 탭 순서를 지정할 수 있습니다.</li>
           <li><code>$1:설명</code> 형식으로 탭 위치에 기본 가이드를 제공할 수 있습니다.</li>
         </ul>
+      </div>
+      <div>
+        <h2 class="heading-base">VSCode Guide</h2>
         <ul>
           <li>VSCode에서 <kbd>F1</kbd>키를 누른 후 'snippets' 검색</li>
           <li>원하는 언어 선택</li>
@@ -51,7 +50,7 @@
         placeholder="등록하고 싶은 코드를 삽입하세요."></textarea>
     </div>
     <div class="snippet-output">
-      <h2 class="label">생성코드</h2>
+      <h2 class="heading-base">생성코드</h2>
 
       <div class="output">
         <div class="textarea">
@@ -70,7 +69,13 @@
       <button class="btn-copy">코드복사</button>
     </div>
   </main>
-  <footer class="footer">&copy; 2000 ~ 2025</footer>
+  <footer class="footer">
+    <div class="thisyear">&copy; 2000 ~ </div>
+    <nav>
+      <a href="https://github.com/rebehayan/snippet" target="_blank">Github</a>
+      <a href="https://portfolio-eight-phi-27.vercel.app/" target="_blank">About</a>
+    </nav>
+  </footer>
   <template id="template"></template>
 </body>
 

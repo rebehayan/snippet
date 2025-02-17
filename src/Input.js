@@ -24,7 +24,8 @@ export const Input = () => {
     const rowLength = code.length;
     const result = code
       .map((line) => {
-        return `"${line}", \n `;
+        const updateLine = line.replace(/"/g, "'");
+        return `"${updateLine}", \n `;
       })
       .join("");
 

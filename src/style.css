@@ -1,4 +1,8 @@
 @layer reset, layout, components, edit;
+
+/* -------------------------------------------------------------------------- */
+/*                                    Reset                                   */
+/* -------------------------------------------------------------------------- */
 @layer reset {
   :root {
     --gray: #f0f0f0;
@@ -14,6 +18,10 @@
     margin: 0;
     box-sizing: border-box;
     font-family: var(--kor);
+    &::selection {
+      background-color: var(--darkLight);
+      color: var(--white);
+    }
   }
   html {
     font-size: 62.5%;
@@ -21,6 +29,17 @@
   body {
     font-size: 1rem;
     background-color: #f0f0f0;
+  }
+  a.new {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    &::after {
+      content: "";
+      width: 1.5rem;
+      aspect-ratio: 1;
+      background: url(./images/ico_blank.svg) no-repeat center / contain;
+    }
   }
 }
 
@@ -46,6 +65,21 @@
   .footer {
     margin-top: 4rem;
     font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+    a {
+      font-size: 1.6rem;
+      color: inherit;
+      transition: 0.5s;
+      &:hover {
+        color: var(--red);
+      }
+    }
   }
 }
 
@@ -63,6 +97,7 @@
       font-size: 1.6rem;
       cursor: pointer;
       font-weight: 500;
+      transition: 0.5s;
     }
   }
   @layer forms {
@@ -82,26 +117,13 @@
         font-family: var(--kor);
       }
     }
-    .label,
-    label {
+    :is(.heading-base, label) {
       color: var(--dark);
       font-size: 1.6rem;
       font-weight: 600;
     }
   }
   @layer etc {
-    .gnb {
-      display: flex;
-      gap: 1rem;
-      a {
-        font-size: 1.6rem;
-        color: inherit;
-        transition: 0.5s;
-        &:hover {
-          color: var(--red);
-        }
-      }
-    }
     .logo {
       display: flex;
       align-items: center;
@@ -115,47 +137,51 @@
   @layer notice {
     .notice-guide {
       grid-column: 1/-1;
-      background-color: var(--green);
-      padding: 2rem;
-      border-radius: 1rem;
-    }
-    .notice-guide__content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      font-size: 1.6rem;
-      line-height: 1.6;
-      margin-top: 1rem;
-      ul {
-        list-style-position: inside;
-        li {
-          padding-block: 0.2rem;
+      background-color: var(--green);
+      padding: 2rem 3rem;
+      border-radius: 1rem;
+      > div {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        margin-top: 1rem;
+        ul {
+          list-style-position: inside;
+          li {
+            padding-block: 0.2rem;
+          }
         }
       }
     }
-  }
 
-  @layer {
-    code {
-      background-color: var(--darkLight);
-      padding: 0 0.5rem;
-      border-radius: 0.4rem;
-      display: inline-block;
-      color: var(--white);
-      font-size: 1.4rem;
-      line-height: -1rem;
-    }
-    kbd {
-      padding: 0 0.5rem;
-      height: 2rem;
-      align-content: center;
-      border-radius: 0.4rem;
-      display: inline-block;
-      font-size: 1.4rem;
-      margin-inline: 0.2rem;
-      border: 1px solid var(--dark);
-      box-shadow: 2px 2px 0 var(--dark);
-      line-height: -1rem;
-      background-color: var(--white);
+    @layer {
+      code {
+        background-color: var(--darkLight);
+        padding: 0 0.5rem;
+        border-radius: 0.4rem;
+        display: inline-block;
+        color: var(--white);
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: -1rem;
+        translate: 0 -0.2rem;
+      }
+      kbd {
+        align-content: center;
+        border-radius: 0.4rem;
+        display: inline-block;
+        margin-inline: 0.2rem;
+        padding: 0 0.5rem;
+        height: 2rem;
+        border: 1px solid var(--dark);
+        box-shadow: 2px 2px 0 var(--dark);
+        background-color: var(--white);
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: -1rem;
+        translate: 0 -0.3rem;
+      }
     }
   }
 }

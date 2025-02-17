@@ -1,5 +1,10 @@
 import { ClipBoard } from "./ClipBoard.js";
 
+const text = {
+  copy: "코드복사",
+  copied: "코드가 복사 되었습니다",
+};
+
 export const CopyCode = () => {
   const buttonCopy = document.querySelector(".btn-copy");
   if (!buttonCopy) return;
@@ -15,6 +20,10 @@ export const CopyCode = () => {
     template.append(code3.innerText);
 
     ClipBoard(template).then(() => {
+      buttonCopy.textContent = text.copied;
+      setTimeout(() => {
+        buttonCopy.textContent = text.copy;
+      }, 1500);
       template.innerText = "";
     });
   });
